@@ -22,6 +22,18 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Digital Finance"
+rootProject.name = "ApexVest"
 include(":app")
+
+// Core Modules
+include(":core:common")
+include(":core:designsystem")
+include(":core:navigation")
+include(":core:network")
+include(":core:database")
+
+// Feature Modules
+include(":feature:dashboard")
+include(":feature:market")
+include(":feature:wallet")
  

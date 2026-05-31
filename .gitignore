@@ -1,3 +1,8 @@
+# Built artifacts
+**/build/
+/captures
+
+# Android Studio / IntelliJ
 *.iml
 .gradle
 /local.properties
@@ -7,9 +12,18 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/.idea/shelf/
+/.idea/dbnavigator.xml
+/.idea/deviceManager.xml
+/.idea/planningMode.xml
+
+# System files
 .DS_Store
-/build
-/captures
+Thumbs.db
+
+# External native builds
 .externalNativeBuild
 .cxx
+
+# Local configuration
 local.properties
