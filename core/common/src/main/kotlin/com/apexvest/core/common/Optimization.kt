@@ -7,12 +7,10 @@ import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.sample
 
 /**
- * Marks a class as [Immutable] for the Compose compiler.
- * This is useful for wrapping external models or data classes that might not be 
- * automatically inferred as immutable.
+ * Wrapper for result UI states.
  */
 @Immutable
-data class UiState<T>(
+data class UiResultState<T>(
     val data: T? = null,
     val isLoading: Boolean = false,
     val error: String? = null

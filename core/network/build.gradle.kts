@@ -31,4 +31,5 @@ dependencies {
     implementation(libs.hiltAndroidLib)
     ksp(libs.hiltCompilerLib)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.timber)
 }

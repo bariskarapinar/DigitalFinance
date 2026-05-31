@@ -51,6 +51,7 @@ dependencies {
     implementation(project(":feature:dashboard"))
     implementation(project(":feature:market"))
     implementation(project(":feature:wallet"))
+    implementation(project(":feature:onboarding"))
 
     implementation(libs.hiltAndroidLib)
     ksp(libs.hiltCompilerLib)
@@ -65,6 +66,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     
+    implementation(libs.timber)
+
     testImplementation(libs.junit)
     testImplementation(libs.konsist)
     testImplementation(libs.timber)

@@ -36,4 +36,5 @@ include(":core:database")
 include(":feature:dashboard")
 include(":feature:market")
 include(":feature:wallet")
+include(":feature:onboarding")
  
