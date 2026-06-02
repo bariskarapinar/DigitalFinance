@@ -31,10 +31,13 @@ include(":core:designsystem")
 include(":core:navigation")
 include(":core:network")
 include(":core:database")
+include(":core:crypto")
+include(":core:ai")
 
 // Feature Modules
 include(":feature:dashboard")
 include(":feature:market")
 include(":feature:wallet")
 include(":feature:onboarding")
+include(":feature:fraud")
  
