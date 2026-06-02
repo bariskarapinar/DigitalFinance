@@ -33,6 +33,7 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:network"))
     implementation(project(":core:database"))
+    implementation(project(":core:crypto"))
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hiltAndroidLib)
@@ -41,4 +42,8 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
+    
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
