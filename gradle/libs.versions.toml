@@ -16,6 +16,8 @@ room = "2.6.1"
 sqlcipher = "4.6.1"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
+mockito = "5.14.2"
+coroutinesTest = "1.10.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -63,6 +65,18 @@ androidx-biometric = { group = "androidx.biometric", name = "biometric", version
 # ML Kit (AI Onboarding)
 mlkitTextRecognition = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition", version = "19.0.1" }
 mlkitFaceDetection = { group = "com.google.mlkit", name = "face-detection", version = "16.1.7" }
+
+# AI & Math
+tensorflow-lite = { group = "org.tensorflow", name = "tensorflow-lite", version = "2.16.1" }
+commons-math = { group = "org.apache.commons", name = "commons-math3", version = "3.6.1" }
+
+# Web3 & Crypto
+bouncy-castle = { group = "org.bouncycastle", name = "bcprov-jdk15to18", version = "1.73" }
+bitcoinj-core = { group = "org.bitcoinj", name = "bitcoinj-core", version = "0.16.3" }
+
+# Testing
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
