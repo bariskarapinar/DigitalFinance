@@ -33,6 +33,8 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:network"))
     implementation(project(":core:database"))
+    implementation(project(":core:crypto"))
+    implementation(project(":core:ai"))
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hiltAndroidLib)
