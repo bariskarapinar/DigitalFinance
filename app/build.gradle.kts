@@ -47,11 +47,14 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:network"))
     implementation(project(":core:database"))
+    implementation(project(":core:crypto"))
+    implementation(project(":core:ai"))
     
     implementation(project(":feature:dashboard"))
     implementation(project(":feature:market"))
     implementation(project(":feature:wallet"))
     implementation(project(":feature:onboarding"))
+    implementation(project(":feature:fraud"))
 
     implementation(libs.hiltAndroidLib)
     ksp(libs.hiltCompilerLib)
