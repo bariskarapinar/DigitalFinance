@@ -9,8 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import com.apexvest.core.designsystem.GreenStock
-import com.apexvest.core.designsystem.RedStock
+import com.apexvest.core.designsystem.BullishGreen
+import com.apexvest.core.designsystem.BearishRed
 import java.util.Locale
 
 @Composable
@@ -22,9 +22,9 @@ fun PriceTicker(
     var previousPrice by remember { mutableDoubleStateOf(price) }
     val color by animateColorAsState(
         targetValue = when {
-            price > previousPrice -> GreenStock
-            price < previousPrice -> RedStock
-            else -> MaterialTheme.colorScheme.onBackground
+            price > previousPrice -> BullishGreen
+            price < previousPrice -> BearishRed
+            else -> Color.White
         },
         label = "price_color"
     )
