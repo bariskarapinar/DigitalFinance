@@ -10,8 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
-import com.apexvest.core.designsystem.GreenStock
-import com.apexvest.core.designsystem.RedStock
+import com.apexvest.core.designsystem.*
 
 @Composable
 fun StockChart(
@@ -19,7 +18,7 @@ fun StockChart(
     modifier: Modifier = Modifier,
     isPositive: Boolean = true
 ) {
-    val color = if (isPositive) GreenStock else RedStock
+    val color = if (isPositive) BullishGreen else BearishRed
     
     Canvas(
         modifier = modifier
@@ -30,7 +29,7 @@ fun StockChart(
 
         val max = data.maxOrNull() ?: 1.0
         val min = data.minOrNull() ?: 0.0
-        val range = max - min
+        val range = (max - min).coerceAtLeast(1.0)
         val width = size.width
         val height = size.height
         val stepX = width / (data.size - 1)
@@ -46,7 +45,14 @@ fun StockChart(
         drawPath(
             path = path,
             color = color,
-            style = Stroke(width = 2.dp.toPx())
+            style = Stroke(width = 3.dp.toPx())
+        )
+
+        // Glow effect
+        drawPath(
+            path = path,
+            color = color.copy(alpha = 0.3f),
+            style = Stroke(width = 8.dp.toPx())
         )
 
         // Fill area under the curve
@@ -60,7 +66,7 @@ fun StockChart(
         drawPath(
             path = fillPath,
             brush = Brush.verticalGradient(
-                colors = listOf(color.copy(alpha = 0.3f), Color.Transparent)
+                colors = listOf(color.copy(alpha = 0.2f), Color.Transparent)
             )
         )
     }
