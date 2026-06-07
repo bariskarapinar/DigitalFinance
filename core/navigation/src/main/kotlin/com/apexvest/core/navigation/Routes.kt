@@ -8,7 +8,7 @@ sealed interface NavRoute {
     data object Dashboard : NavRoute
 
     @Serializable
-    data object Investment : NavRoute
+    data object Market : NavRoute
 
     @Serializable
     data object Wallet : NavRoute
