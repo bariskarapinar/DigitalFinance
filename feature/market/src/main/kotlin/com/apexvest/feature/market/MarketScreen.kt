@@ -2,14 +2,16 @@ package com.apexvest.feature.market
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.apexvest.core.designsystem.components.StockChart
+import com.apexvest.core.designsystem.*
+import com.apexvest.core.designsystem.components.CandleData
+import com.apexvest.core.designsystem.components.CandlestickChart
+import com.apexvest.core.designsystem.components.NeonCard
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -17,14 +19,29 @@ import java.util.Locale
 fun MarketScreen(
     viewModel: MarketViewModel = hiltViewModel()
 ) {
-    val asset by viewModel.selectedAsset.collectAsState()
+    val state by viewModel.uiState.collectAsState()
+    
+    // Simulate some candle data
+    val candleData = remember {
+        List(30) { i ->
+            CandleData(
+                open = 100f + (Math.random() * 20).toFloat(),
+                close = 100f + (Math.random() * 20).toFloat(),
+                high = 130f,
+                low = 90f,
+                timestamp = System.currentTimeMillis() - i * 60000
+            )
+        }
+    }
 
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text("Portfolio Analysis") }
+                title = { Text("Institutional Trading", color = NeonCyan) },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color.Transparent)
             )
-        }
+        },
+        containerColor = DeepBlack
     ) { padding ->
         Column(
             modifier = Modifier
@@ -32,46 +49,38 @@ fun MarketScreen(
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            asset?.let {
-                Text(it.name, style = MaterialTheme.typography.headlineMedium)
-                Text(it.symbol, style = MaterialTheme.typography.bodyLarge)
-                Spacer(modifier = Modifier.height(24.dp))
-                
-                Text("Real-Time Candlestick Chart (Simulated)", style = MaterialTheme.typography.titleMedium)
-                StockChart(
-                    data = it.history,
-                    isPositive = it.change24h > 0
-                )
-                
-                Spacer(modifier = Modifier.height(24.dp))
-                
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text("Order Book (Bids)", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
-                        it.history.takeLast(5).forEach { price ->
-                            Text("$${String.format(Locale.US, "%.2f", price * 0.999)}", style = MaterialTheme.typography.bodySmall)
-                        }
-                    }
-                    Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.End) {
-                        Text("Order Book (Asks)", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.tertiary)
-                        it.history.takeLast(5).forEach { price ->
-                            Text("$${String.format(Locale.US, "%.2f", price * 1.001)}", style = MaterialTheme.typography.bodySmall)
-                        }
-                    }
-                }
+            NeonCard(modifier = Modifier.height(300.dp)) {
+                Text("AI-OPTIMIZED CANDLESTICK ENGINE", style = MaterialTheme.typography.labelSmall, color = NeonCyan)
+                Spacer(modifier = Modifier.height(16.dp))
+                CandlestickChart(data = candleData)
+            }
 
-                Spacer(modifier = Modifier.height(24.dp))
-                
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                    Button(onClick = { }, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
-                        Text("BUY")
-                    }
-                    Button(onClick = { }, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)) {
-                        Text("SELL")
-                    }
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Button(
+                onClick = { viewModel.onIntent(MarketIntent.RebalancePortfolio("Aggressive")) },
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(containerColor = NeonPurple)
+            ) {
+                Text("Robo-Advisory: Auto-Rebalance Portfolio")
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            if (state.optimalAllocations.isNotEmpty()) {
+                Text("AI REBALANCING COMPLETE", color = BullishGreen, style = MaterialTheme.typography.labelMedium)
+                state.optimalAllocations.forEach { (symbol, weight) ->
+                    Text("$symbol: ${String.format(Locale.US, "%.1f", weight * 100)}%", color = Color.White)
                 }
-            } ?: Box(modifier = Modifier.fillMaxSize()) {
-                CircularProgressIndicator()
+            }
+            
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            OutlinedButton(
+                onClick = { viewModel.onIntent(MarketIntent.StakeTokens("ETH", 1.0)) },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Web3: Authorize DeFi Staking via HD Wallet", color = NeonPink)
             }
         }
     }
