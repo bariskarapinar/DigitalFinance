@@ -12,13 +12,13 @@ data class MarketState(
     val error: String? = null
 ) : UiState
 
-sealed class MarketIntent : UiIntent {
+sealed interface MarketIntent : UiIntent {
     data object LoadMarket : MarketIntent
     data class RebalancePortfolio(val riskProfile: String) : MarketIntent
     data class StakeTokens(val assetId: String, val amount: Double) : MarketIntent
 }
 
-sealed class MarketEffect : UiEffect {
+sealed interface MarketEffect : UiEffect {
     data class ShowToast(val message: String) : MarketEffect
     data class NavigateToDetails(val assetId: String) : MarketEffect
 }
