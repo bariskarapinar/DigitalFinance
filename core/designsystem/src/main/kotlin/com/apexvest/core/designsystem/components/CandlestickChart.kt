@@ -7,13 +7,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
-import com.apexvest.core.designsystem.GreenStock
-import com.apexvest.core.designsystem.RedStock
+import com.apexvest.core.designsystem.BullishGreen
+import com.apexvest.core.designsystem.BearishRed
 
 data class CandleData(
     val open: Float,
@@ -55,16 +54,15 @@ fun CandlestickChart(
 
         val candleWidth = 20.dp.toPx()
         val spacing = 10.dp.toPx()
-        val totalWidth = (candleWidth + spacing) * data.size
         
         val maxPrice = data.maxOf { it.high }
         val minPrice = data.minOf { it.low }
-        val range = maxPrice - minPrice
+        val range = maxOf(maxPrice - minPrice, 1f)
         
         data.forEachIndexed { index, candle ->
             val x = index * (candleWidth + spacing)
             val isBullish = candle.close >= candle.open
-            val color = if (isBullish) GreenStock else RedStock
+            val color = if (isBullish) BullishGreen else BearishRed
             
             // Draw wick
             drawLine(
