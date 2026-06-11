@@ -2,10 +2,21 @@ package com.apexvest.core.designsystem
 
 import androidx.compose.ui.graphics.Color
 
-val GreenStock = Color(0xFF00C805)
-val RedStock = Color(0xFFFF5000)
-val DarkBackground = Color(0xFF1B1B1B)
-val SurfaceGray = Color(0xFF2C2C2C)
-val TextWhite = Color(0xFFFFFFFF)
-val TextGray = Color(0xFF9E9E9E)
-val PrimaryGold = Color(0xFFFFD700)
+// ApexVest Neon Palette
+val NeonCyan = Color(0xFF00FBFF)
+val NeonPurple = Color(0xFFBC13FE)
+val NeonPink = Color(0xFFFF00BD)
+val NeonGreen = Color(0xFF00FF41)
+val DeepBlack = Color(0xFF0A0A0A)
+val GlassWhite = Color(0x1AFFFFFF)
+val GlassBlack = Color(0x33000000)
+
+// Vibrant Stock Colors
+val BullishGreen = Color(0xFF00FF9D)
+val BearishRed = Color(0xFFFF2E63)
+
+// Gradient Sets
+val PrimaryGradient = listOf(NeonCyan, NeonPurple)
+val SecondaryGradient = listOf(NeonPurple, NeonPink)
+val BullishGradient = listOf(BullishGreen.copy(alpha = 0.5f), Color.Transparent)
+val BearishGradient = listOf(BearishRed.copy(alpha = 0.5f), Color.Transparent)
