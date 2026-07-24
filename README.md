@@ -1,8 +1,3 @@
-<!-- README.md -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/bariskarapinar/bariskarapinar/main/assets/apexvest_banner.png" alt="ApexVest Banner" width="100%">
-</p>
-
 <h1 align="center">🚀 ApexVest: Enterprise-Grade Digital Finance</h1>
 
 <p align="center">
