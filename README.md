@@ -133,11 +133,6 @@ The project is strictly modularized to ensure separation of concerns and high sc
 ## 🎨 Visual Showcase
 
 
-<img width="518" height="1071" alt="image" src="" />
-
-
-
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/73563c95-2550-404b-8487-779b28786fbd" width="24%">
   <img src="https://github.com/user-attachments/assets/2ed28d20-904e-42b9-b9ff-2f7449a244e6" width="24%">
