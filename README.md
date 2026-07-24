@@ -133,7 +133,7 @@ The project is strictly modularized to ensure separation of concerns and high sc
 ## 🎨 Visual Showcase
 
 
-<img width="518" height="1071" alt="image" src="https://github.com/user-attachments/assets/9639969d-55a5-48df-8fb9-2b942fb23ad1" />
+<img width="518" height="1071" alt="image" src="" />
 
 
 
@@ -146,18 +146,9 @@ The project is strictly modularized to ensure separation of concerns and high sc
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fb62ad1d-605a-43d9-ac15-3a81b92e1d21" width="24%">
   <img src="https://github.com/user-attachments/assets/00414b65-71a7-43d6-9ec9-26166cc808a9" width="24%">
-  <img src="" width="24%">
+  <img src="https://github.com/user-attachments/assets/9639969d-55a5-48df-8fb9-2b942fb23ad1" width="24%">
 </p>
-<p align="center">
-  <img src="" width="24%">
-  <img src="" width="24%">
-  <img src="" width="24%">
-</p>
-<p align="center">
-  <img src="" width="24%">
-  <img src="" width="24%">
-  <img src="" width="24%">
-</p>
+
 ---
 
 ## 🛠 Tech Stack
