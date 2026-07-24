@@ -54,6 +54,20 @@ Enterprise messaging for international transfers.
 - **Compliance Engine**: Generating compliant XML/JSON payloads for SWIFT transactions.
 
 ---
+## 🎨 Visual Showcase
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/73563c95-2550-404b-8487-779b28786fbd" width="24%">
+  <img src="https://github.com/user-attachments/assets/2ed28d20-904e-42b9-b9ff-2f7449a244e6" width="24%">
+  <img src="https://github.com/user-attachments/assets/5fc17375-e3fa-4bd5-95f0-49f5d1e211a3" width="24%">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb62ad1d-605a-43d9-ac15-3a81b92e1d21" width="24%">
+  <img src="https://github.com/user-attachments/assets/00414b65-71a7-43d6-9ec9-26166cc808a9" width="24%">
+  <img src="https://github.com/user-attachments/assets/9639969d-55a5-48df-8fb9-2b942fb23ad1" width="24%">
+</p>
+
+---
 
 ## 🏗 Architecture & Flow
 
@@ -127,22 +141,6 @@ The project is strictly modularized to ensure separation of concerns and high sc
     ├── fraud/            # Telemetry collection & Trust scoring
     └── onboarding/       # AI-driven user verification
 ```
-
----
-
-## 🎨 Visual Showcase
-
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/73563c95-2550-404b-8487-779b28786fbd" width="24%">
-  <img src="https://github.com/user-attachments/assets/2ed28d20-904e-42b9-b9ff-2f7449a244e6" width="24%">
-  <img src="https://github.com/user-attachments/assets/5fc17375-e3fa-4bd5-95f0-49f5d1e211a3" width="24%">
-</p>
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/fb62ad1d-605a-43d9-ac15-3a81b92e1d21" width="24%">
-  <img src="https://github.com/user-attachments/assets/00414b65-71a7-43d6-9ec9-26166cc808a9" width="24%">
-  <img src="https://github.com/user-attachments/assets/9639969d-55a5-48df-8fb9-2b942fb23ad1" width="24%">
-</p>
 
 ---
 
